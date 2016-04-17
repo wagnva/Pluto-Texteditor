@@ -1,0 +1,351 @@
+/* Including all the framework css */
+
+@import "normalize.css";
+@import "skeleton.css";
+@import "font-awesome.min.css";
+
+/* Including all the framework css */
+
+$lightgray: lighten(lightgray, 10);
+$darkgray: #1F3B45;
+
+@font-face{
+    font-family: "Inconsolata";
+    src: url("../fonts/Inconsolata-Regular.ttf");
+}
+
+html{
+    
+    .main-wrapper{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $darkgray;
+        -webkit-app-region: no-drag;
+    }
+    
+    .main-container{
+        background: white;
+        overflow: hidden;
+        //-webkit-user-select: none;
+        font-family: "Arial";
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        right: 4px;
+        bottom: 4px;
+    }
+    
+    .close,
+    .minimize,
+    .maximize{
+        cursor: pointer;
+        display: inline-block;
+        position: absolute;
+        top: 7px;
+        z-index: 1;
+        font-size: 1.8rem;
+        color: $lightgray;
+        transform: color 1s ease-in;
+        -webkit-app-region: no-drag;
+        
+        &:hover{
+            color: lighten(red, 25);
+        }
+    }
+    
+    .close{
+        right: 8px;
+    }
+    .minimize{
+        right: 60px;
+        top: 12px;
+    }
+    .maximize{
+        right: 35px;
+        top: 10px;
+        font-size: 1.5rem;
+    }
+    
+    input,
+    button{
+        -webkit-app-region: no-drag;
+        border-radius: 0;
+    }
+    
+    .menu-wrapper{
+        width: 100%;
+        height: 55px;
+        background: $darkgray; 
+        -webkit-app-region: drag;
+        position: static;
+        
+        .title-bar{
+            color: $lightgray;
+            display: inline-block;
+            position: absolute;
+            top: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: "Sans Serif";
+        }
+        
+        .menu{
+            padding-top: 24px;
+            padding-left: 4px;
+            list-style: none;
+            color: $lightgray;
+            font-size: 13px;
+            .menu-item{
+                display: inline-block;
+                position: relative;
+                cursor: pointer;
+                padding: 3px 8px;
+                -webkit-app-region: no-drag;
+                letter-spacing: 1px;
+                &:hover{
+                    background: lighten(#1F3B45, 10);
+                    ul{
+                        display: block;
+                    }
+                }
+                &:first-child{
+                    margin-left: 0px;
+                }
+                
+                ul{
+                    position: absolute;
+                    list-style: none;
+                    display: none;
+                    margin: 0;
+                    width: 150px;
+                    background: lighten($darkgray, 10);
+                    margin-top: 3px;
+                    padding-bottom: 8px;
+                    margin-left: -8px;
+                    padding-top: 8px;
+                    z-index: 300;
+                    li{
+                        padding: 7px 8px;
+                        padding-left: 15px;
+                        z-index: 300;
+                        
+                        margin: 0;
+                        &:hover{
+                            background: lighten($darkgray, 20);
+                        }
+                    }
+                    li.seperator{
+                        padding: 0px;
+                        background: lighten($darkgray, 5);
+                        height: 1px;
+                        width: 100%;
+                        &:hover{
+                            background: lighten($darkgray, 5);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.column-wrapper{
+    width: 100%;
+    height: 100%;
+    
+    .one-third.column{
+        width: 25%;
+        height: auto;
+        max-height: 100%;
+        min-height: 100%;
+        min-width: 20%;
+        .current{
+            width: 100%;
+            height: 30%;
+            max-height: 40%;
+            overflow-y: scroll;
+            overflow-x: auto;
+            background: lighten($darkgray, 6);
+            color: $lightgray;
+            position: relative;
+            z-index: 200;
+            h6{
+                color: darken($lightgray, 30);
+                font-size: 13px;
+                letter-spacing: 1px;
+                position: fixed;
+                top: 5px;
+                left: 12px;
+                display: block;
+            }
+            
+            #current{
+                list-style: none;
+                font-size: 12px;
+                margin-left: 3px;
+                margin-top: 18px;
+                li{
+                    cursor: pointer;
+                    padding: 3px 10px;
+                    margin: 0;
+                    
+                    span.file-close{
+                        color: $lightgray;
+                        position: relative;
+                        left: 0;
+                        opacity: 0;
+                        transition: opacity 0.2s ease-out;
+                        
+                        &:hover{
+                            color: lighten(red, 25);
+                        }
+                    }
+                    
+                    span.file-name{
+                        color: darken($lightgray, 7);
+                        margin-left: 8px;
+                    }
+                    
+                    span.file-type{
+                        color: darken($lightgray, 30);
+                    }
+                    
+                    &:hover{
+                        background: lighten($darkgray, 13);
+                        
+                        span.file-close{
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+        .file-system{
+            width: 100%;
+            height: 70%;
+            max-height: 70%;
+            overflow-y: scroll;
+            overflow-x: auto;
+            background: lighten($darkgray, 3);
+            
+            #root{
+                margin-top: 10px;
+                color: darken($lightgray, 30);
+                list-style: none;
+                width: 100%;
+                padding-bottom: 30px;
+                
+                ul{
+                    list-style: none;
+                    margin-top: 5px;
+                    display: none;
+                    margin-left: 13px;
+                }
+                
+                li li{
+                    display: none;
+                }
+                
+                li.file{
+                    cursor: pointer;
+                    margin: 5px 0px;
+                    &:hover{
+                        background-color: lighten($darkgray, 10);
+                    }
+                }
+                
+                
+                span{
+                    
+                    font-size: 12px;
+                    
+                    &.file-name{
+                        color: darken($lightgray, 7);
+                    }
+                    
+                    &.file-type{
+                        color: darken($lightgray, 30);
+                    }
+                    
+                    
+                    &:first-child{
+                        padding-left: 20px;
+                    }      
+                    
+                }
+                
+                div{
+                    padding: 3px 10px;
+                    padding-left: 20px;
+                    cursor: pointer;
+                    width: 100%;    
+                    display: block;
+                    font-size: 12px;
+                    background-position: 4 6;
+                    background-size: 11px 11px;
+                    background-repeat: no-repeat;
+                    
+                    
+                    &.closed{
+                        background-image: url("../img/arrow-right.png");
+                    }
+                    
+                    &.opened{
+                        background-image: url("../img/arrow-down.png");
+                    }
+                    
+                    &:hover{
+                        background-color: lighten($darkgray, 10);
+                    }
+                }
+                
+            }
+        }
+    }
+    
+    .two-thirds.column{
+        margin-left: 0;
+        width: 75%;
+        max-height: 100%;
+        min-height: 100%;
+        height: 100%;
+        
+        #main-textarea{
+            height: 100%;
+            width: 100%;
+            max-height: 100%;
+            border-radius: 0;
+            margin-bottom: 15px;
+            margin-right: 17px;
+            margin-bottom: 17px;
+            border: 0;
+            //-webkit-appearance: textarea;
+            border: none;
+            padding: 10px 15px;
+            font-family: "Inconsolata";
+            font-size: 12px;
+            line-height: 14px;
+            white-space: pre;
+            word-wrap: break-word;
+            overflow-x: scroll;
+            overflow-y: scroll;
+        }
+    }
+}
+
+
+::-webkit-scrollbar{
+    background: $darkgray;
+}
+
+::-webkit-scrollbar-thumb{
+    background: lighten($darkgray, 12);
+}
+
+::-webkit-scrollbar-corner{
+    background: $darkgray;
+}

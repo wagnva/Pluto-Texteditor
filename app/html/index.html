@@ -1,0 +1,95 @@
+<html>
+<head>
+    <title>Test App</title>
+    <link rel="stylesheet" href="../css/style.css">    
+</head>
+<body>
+    
+    <div class="main-wrapper">
+        <div class="main-container">
+    
+            <div class="menu-wrapper">
+                <!-- All the Window Buttons on the Top Right Corner -->
+                <div class="minimize"><i class="fa fa-minus"></i></div>
+                <div class="maximize"><i class="fa fa-plus"></i></div>
+                <div class="close"><i class="fa fa-times"></i></div>
+
+                <!-- Title bar -->
+                <div class="title-bar">
+                    <span>Project Unnamed</span>
+                </div>
+
+                <!-- Menu -->
+                <ul class="menu">
+                    <li class="menu-item">
+                        <span>File</span>
+                        <ul>
+                            <li class="submenu-item" data-func="fileOpen">Open File</li>
+                            <li class="submenu-item" data-func="filesOpen">Open Folder</li>
+                            <li class="seperator"></li>
+                            <li class="submenu-item" data-func="fileSave">Save</li>
+                            <li class="submenu-item" data-func="fileSaveAll">Save All</li>
+                            <li class="seperator"></li>
+                            <li class="submenu-item" data-func="fileClose">Close</li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">Edit</li>
+                </ul>
+            </div>
+    
+       
+            <div class="column-wrapper">
+                <div class="one-third column">
+                    <div class="current">
+                        
+                        <ul id = "current">
+                            <!--<li><span class="file-close"><i class="fa fa-times"></i></span><span class="file-name">Index</span><span class="file-type">.js</span></li>-->
+                        </ul>
+                    </div>
+                    <div class="file-system">
+                        <ul id="root">
+                            
+                            <!--
+                            <li>
+                                <div class="closed">Folderr rrrrrrr rrr rrrrrr rrr rrrrrr rrrrr rrrr rrrrrrr rrrrrr</div>
+                                <ul>
+                                    <li>
+                                        <div class="closed">Subfolder</div>
+                                        <ul>
+                                            <li>
+                                                <div class="closed">Subfolder</div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                            <li class="file"><span class="file-name">Subitem</span><span class="file-type">.html</span></li>
+                            
+                            <li>
+                                <div class="closed">Folder</div>
+                                <ul>
+                                    <li class="file"><span class="name">Subitem</span><span class="file-type">.html</span></li>
+                                </ul>    
+                            </li>
+                            <li><div class="closed">Folder</div></li>
+                            <li><div class="closed">Folder</div></li>
+                            <li><div class="closed">Folder</div></li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="two-thirds column">
+                    <div id="main-textarea" contenteditable="true">
+
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    
+    <script>window.$ = window.jQuery = require('./../js/jquery.js');</script>
+    <script src="../js/index.js"></script>
+</body>
+</html>
+
