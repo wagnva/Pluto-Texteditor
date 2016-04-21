@@ -328,6 +328,7 @@ var menu = {
             root.attr("data-rootPath", path);
         }
         
+        
     },
     
     fileSave: function(){
