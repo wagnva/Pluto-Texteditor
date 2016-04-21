@@ -298,29 +298,43 @@ var menu = {
          * Open a file dialog to open a directory. Then get all the directories and files and display it in the html filestructure
          */
         
-        //clear the display
-        filesystem.init();
+        var path = dialog.showOpenDialog({title: "Open Directory", properties: ["openDirectory"]});
         
-        var path = dialog.showOpenDialog({title: "Open Directory", properties: ["openDirectory"]})[0];
-        files.loadFolder(path, function(err, list){
+        //if the user didnt press cancel
+        if(path){
+            path = path[0];
+            
+            //clear the display
+            filesystem.init();
+            current.empty();
+            textboxSystem.displayText("");
+
+            files.loadFolder(path, function(err, list){
+
+                //add all the directories
+                list.dir.forEach(function(dirPath){
+                    filesystem.addDirectory(dirPath);
+                });
+
+
+                list.files.forEach(function(filePath){
+                    filesystem.addFileToSystem(filePath);
+                });
+
+                setupFileFolderClickListener();
+            });
+
+            //add the root path to the root display
+            root.attr("data-rootPath", path);
+        }
+        
+    },
     
-            //add all the directories
-            list.dir.forEach(function(dirPath){
-                filesystem.addDirectory(dirPath);
-            });
-            
-            
-            list.files.forEach(function(filePath){
-                filesystem.addFileToSystem(filePath);
-            });
-            
-            setupFileFolderClickListener();
-        });
+    fileSave: function(){
         
-        //add the root path to the root display
-        root.attr("data-rootPath", path);
+        console.log("Save File");
+        
     }
-    
 }
 
 menu.init();

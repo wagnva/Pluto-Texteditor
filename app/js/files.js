@@ -21,6 +21,12 @@ var getLoadedFile = function(path){
 
 var files = {
     
+    clearLoadedFiles: function(){
+        
+        currentFiles = [];
+        
+    },
+    
     loadFile: function(path, cb){
         
         /*
@@ -96,8 +102,11 @@ var files = {
         }
         var temp = path.split("/");
         return temp[temp.length - 1];
-    }
+    },
     
+    saveFile: function(file){
+        
+    }
 }
 
 
