@@ -23,7 +23,24 @@ var files = {
     
     clearLoadedFiles: function(){
         
+        /*
+         * Clears the currentFiles Array
+         */
+        
         currentFiles = [];
+        
+    },
+    
+    clearLoadedFile: function(path){
+        
+        /*
+         * @path The Path of the file that should be removed from the loaded files
+         * Removes a file from the currentFiles array
+         */
+        
+        currentFiles = currentFiles.filter(function(element){
+            return element.path === path;
+        }); 
         
     },
     
@@ -42,8 +59,6 @@ var files = {
         //get the index of the file: if the file is actually already loaded just return the saved data
         var loadedFileIndex = getLoadedFile(path);
         if(loadedFileIndex >= 0){
-            console.log("Used");
-            console.log(currentFiles[loadedFileIndex].data);
             return cb(null, currentFiles[loadedFileIndex]);   
         }
         

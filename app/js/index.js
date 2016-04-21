@@ -242,15 +242,28 @@ var currentSystem = {
             var actFileExtension = temp.join(".");
             
             current.append(currentSystem._createLiCurrent(actFileName,actFileExtension,pathToFile));
+            
+            //setup the click listeners: for opening the file and for closing and removing a current file
             setupFileFolderClickListener();
+            $("[data-path='" + pathToFile + "'] > .file-close").on("click", currentSystem._closeClickListener);
         }
     
     },
     _createLiCurrent: function(filename, filetype, wholePath){
         return "<li data-path='" + wholePath + "'><span class='file-close'><i class='fa fa-times'></i></span><span class='file-name'>" + filename + "</span><span class='file-type'>" + filetype + "</span></li>";
     },
-    setupClickListeners: function(){
+    _closeClickListener: function(){
         
+        /*
+         * The click listener function on the .file-close span
+         * Removes the file from the current list and deletes the saved data
+         */
+        
+        var liElement = $(this).parent();
+        
+        files.clearLoadedFile(liElement.attr("data-path"));
+        
+        liElement.remove();
     }
 }
 
