@@ -1,11 +1,13 @@
 {
-  "name": "Test",
+  "name": "Pluto",
   "version": "0.1.0",
   "main": "./main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package": "electron-packager . Pluto --platform=win32 --arch=all --out=Staging --version=0.37.3 --overwrite"
   },
   "devDependencies": {
+    "electron-packager": "^7.0.1",
     "electron-prebuilt": "^0.37.3"
   }
 }

@@ -204,6 +204,23 @@ html{
                             color: lighten(red, 25);
                         }
                     }
+                
+                    span.file-unsaved{
+                        background: $lightgray;
+                        border-radius: 50%;
+                        display: inline-block;
+                        position: relative;
+                        left: 7;
+                        width: 5px;
+                        height: 5px;
+                        transform: translateY(-40%);
+                        transition: opacity 0.2s ease-out;
+                        opacity: 0;
+                        
+                        &.show{
+                            opacity: 1;
+                        }
+                    }
                     
                     span.file-name{
                         color: darken($lightgray, 7);
@@ -219,6 +236,9 @@ html{
                         
                         span.file-close{
                             opacity: 1;
+                        }
+                        span.file-unsaved{
+                            opacity: 0;
                         }
                     }
                 }
