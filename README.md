@@ -17,4 +17,4 @@ Pluto does not offer a pre-compiled version to download and use at the moment.
 
 ####Gallery:
 
-<img align="center" src="http://i.imgur.com/w508GsF.png" alt="The main layout">
+<img align="center" src="http://i.imgur.com/luDTnZE.png" alt="The main layout">

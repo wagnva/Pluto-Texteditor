@@ -5,6 +5,8 @@ var editor = ace.edit("main-textarea");
 var modes = {
     js: "javascript",
     css: "css",
+    scss: "scss",
+    sass: "sass",
     html: "html",
     coffe: "coffe",
     cs: "csharp",
@@ -14,7 +16,12 @@ var modes = {
     batch: "batchfile",
     java: "java",
     fortran: "fortran",
-    jade: "jade"
+    jade: "jade",
+    py: "python",
+    xml: "xml",
+    vb: "vbscript",
+    ts: "typescript",
+    lua: "lua"
 }
 
 var init = function(){

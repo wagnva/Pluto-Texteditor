@@ -32,7 +32,7 @@ maximizeBtn.on("click", function(event){
 /* function called when the document is resized */
 var windowResizeMethod = function(event){
     // 55px is the height of the menu bar at the top
-    var newHeight = $(window).height() - 63; //55 = height of the menu bar + 30 = margins of the textarea
+    var newHeight = $(window).height() - 63; //55 = height of the menu bar + 8 = bottom scrollbar
     mainTextarea.css("height", newHeight); //.css("max-height", newHeight).css("min-height", newHeight);
     textbox.resize();
 }
