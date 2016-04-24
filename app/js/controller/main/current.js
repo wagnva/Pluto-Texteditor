@@ -16,7 +16,6 @@ var addFileToCurrent = function(pathToFile){
      */
     
     //if the current file isnt yet added to the current display, add it
-    console.log(pathToFile);
     if(!current.children("[data-path='" + pathToFile + "']").length){
         //get the filename: replace all the \ with / using regex and then get the last element
         var filename = files.splitPathLast(pathToFile.replace(/\\/g, "/"));
@@ -50,7 +49,12 @@ var setUpFileListener = function(elements){
         var path = root.attr("data-rootPath") + "\\" + dataPath;
 
         files.loadFile(path, function(err, file){
-            textboxSystem.displayText(file.data);
+            
+            //get the fileextension
+            var splitArray = file.path.split("."),
+                fileExtension = splitArray[splitArray.length-1];
+            
+            textboxSystem.displayText(file.data, fileExtension);
         });
     });
 }

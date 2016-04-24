@@ -1,0 +1,6 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/Users/Valentin/Desktop/ProgrammingStuff/_Electron/Pluto-Texteditor/app/js/lib/ace/worker-xquery.js",
+        "C:/Users/Valentin/Desktop/ProgrammingStuff/_Electron/Pluto-Texteditor/app/js/lib/ace/worker-xml.js"
+    ]
+}
